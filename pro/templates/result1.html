@@ -1,0 +1,98 @@
+$def with (list,form)
+
+<head>
+<style type="text/css">
+
+
+
+div.container
+{
+width:100%;
+margin:0px;
+border:1px solid gray;
+line-height:150%;
+background-color: rgb(153, 153, 153);
+}
+
+div.Content
+{
+font-size: 13px;
+}
+
+h3.t
+{
+font-weight: 400;
+font-size: medium;
+margin-bottom: 1px;
+}
+
+div.url {
+font-size: 13px;
+color:red;
+}
+
+a.green 
+{
+color:green;
+}
+
+em
+{
+font-style: normal;
+color: #c00;
+}
+
+</style>
+<title>电影搜索</title>
+</head>
+
+
+
+<body>
+
+<h1>电影搜索</h1>
+<h2>电影&nbsp<a href="/ac" >演员</a></h2>
+
+
+<form action="/s" method="GET">
+<input type='submit' value="搜索"/>
+<br>
+<br>
+<label for="genre">全部<input type="radio" name="genre" id="genre" value="111" /> </label>&nbsp
+<label for="genre">动作<input type="radio" name="genre" id="genre" value="动作" /> </label>&nbsp  
+<label for="genre">剧情<input type="radio" name="genre" id="genre" value="剧情" /> </label>&nbsp  
+<label for="genre">历史<input type="radio" name="genre" id="genre" value="历史" /> </label>&nbsp  
+<label for="genre">战争<input type="radio" name="genre" id="genre" value="战争" /> </label>&nbsp  
+<br>
+<label for="year">全部<input type="radio" name="year" id="year" value="111" /> </label>&nbsp
+<label for="year">2018<input type="radio" name="year" id="year" value="2018" /> </label>&nbsp 
+<label for="year">2017<input type="radio" name="year" id="year" value="2017" /> </label>&nbsp  
+<label for="year">2016<input type="radio" name="year" id="year" value="2016" /> </label>&nbsp
+
+</form>
+
+
+$for i in list:
+	<div class="container" >
+	<a href=$i[7]>$i[0]</a>
+	<br/>
+	<img src=$i[4]>
+	<br/>
+	score:$i[1]
+	<br/>
+	title:$i[2]
+	<br/>
+	year:$i[3]
+	<br/>
+	genre:$i[5]
+	<br/>
+	stars:$i[6]
+	<br/>
+	url:$i[7]
+	
+	<br/>
+	</div>
+	<br/>
+
+</body>
+

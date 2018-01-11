@@ -1,0 +1,110 @@
+$def with(rank)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+	<title>Hello</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!--[if IE 6]>
+		<link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-func.js"></script>
+</head>
+<body>
+<!-- Shell -->
+<div id="shell">
+	<!-- Header -->
+	<div id="header">
+		<h1 id="logo"><a href="#">movie hunter</a></h1>
+		<div class="social">
+			<span>FOLLOW US ON:</span>
+			<ul>
+			    <li><a class="twitter" href="#">twitter</a></li>
+			    <li><a class="facebook" href="#">facebook</a></li>
+			    <li><a class="vimeo" href="#">vimeo</a></li>
+			    <li><a class="rss" href="#">rss</a></li>
+			</ul>
+		</div>
+		<!-- Navigation -->
+		<div id="navigation">
+			<ul>
+			    <li><a class="active" href="/movie_rate_s">MOVIE</a></li>
+			    <li><a href="/a_s">ACTOR</a></li>
+			    <li><a href="/c_s">CATGORY</a></li>
+			    <li><a href="/p_s">PHOTO</a></li>
+			    <li><a href="/r">RECOMMEND</a></li>
+			</ul>
+		</div>
+		<!-- end Navigation -->
+		
+		<!-- Sub-menu -->
+		<div id="sub-navigation">
+			<ul>
+			    <li><a href="/movie_rate_s">TOP RATED</a></li>
+			    <li><a href="/movie_comment_s">MOST COMMENTED</a></li>
+			</ul>
+			<div id="search">
+				<form action="movie_comment" method="get" accept-charset="utf-8">
+					<label for="search-field">SEARCH</label>					
+					<input type="text" name="kw" value="Enter search here" id="search-field" title="Enter search here" class="blink search-field"  />
+					<input type="submit" value="GO!" class="search-button" />
+				</form>
+			</div>
+		</div>
+		<!-- end Sub-Menu -->
+		
+	</div>
+	<!-- end Header -->
+	
+	<!-- Main -->
+	<div id="main">
+		<!-- Content -->
+		<div id="content">
+
+				<div class="head">
+					<h2>MOST COMMENTED</h2>
+					<p class="text-right">see all</p>
+				</div>
+                $for movie in rank:
+				    <!-- Movie -->
+				    <div class="movie">					
+					    <div class="movie-image">
+						    <a href="$movie[0]"><span class="play"><span class="name">$movie[2]</span></span><img src=$movie[1] alt="movie" /></a>
+					    </div>
+					   
+						    <p>TITLE : $movie[2]</p>
+				
+						    <p>RATING : $movie[3]</p>
+						   
+					   
+						    <p>CATORY : $movie[4]</p>
+						   
+					    
+						    <p>COMMENTS : $movie[6]</p>
+						   
+					    
+						    <p>STARS : $movie[5]</p>
+						   
+					    
+				    </div>
+				    <!-- end Movie -->
+				
+				
+				<div class="cl">&nbsp;</div>
+		</div>
+		<!-- end Content -->
+
+		
+		<div class="cl">&nbsp;</div>
+	</div>
+	<!-- end Main -->
+	<!-- Footer -->
+	<div id="footer">
+		<p> &copy;  Movie Hunter. All Rights Reserved.</p>
+	</div>
+	<!-- end Footer -->
+</div>
+<!-- end Shell -->
+</body>
+</html>
